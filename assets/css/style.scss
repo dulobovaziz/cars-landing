@@ -1,0 +1,458 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style-type: none;
+  font-family: Exo;
+}
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+:root {
+  --body: #0a0a0c;
+  --primary: rgba(65, 119, 220, 1);
+}
+@mixin text($size, $color, $weight, $width) {
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+  width: $width;
+}
+@mixin btn-style($width, $heigh, $bg, $radius, $size, $color, $border) {
+  width: $width;
+  height: $heigh;
+  background-color: $bg;
+  border-radius: $radius;
+  font-size: $size;
+  color: $color;
+  border: $border;
+}
+body {
+  background: var(--body);
+  color: white;
+}
+.sidenav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  &__list {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+
+    &__item {
+      @include text(16px, white, normal, auto);
+
+      &:hover {
+        color: var(--primary);
+        transition: color 0.4s ease-in-out;
+      }
+    }
+  }
+}
+.hero {
+  text-align: center;
+  margin: 40px 0;
+
+  &__info {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 100px;
+
+    &__item {
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+
+      & > *:first-child {
+        color: white;
+        background: #111213;
+        padding: 10px;
+        height: 40px;
+        width: 40px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        border-radius: 50%;
+      }
+      &__subtitle {
+        color: #888b91;
+      }
+    }
+  }
+
+  &__title {
+    @include text(36px, white, 600, auto);
+  }
+
+  &__subtitle {
+    @include text(24px, white, normal, auto);
+    margin: 20px 0 10px 0;
+  }
+  &__type {
+    font-size: 20px;
+    margin-bottom: 48px;
+    i {
+      color: var(--primary);
+    }
+  }
+}
+
+.about {
+  margin: 50px 0;
+  display: flex;
+  align-items: center;
+
+  &__info {
+    width: 50%;
+    margin: 0 90px;
+
+    &__title {
+      @include text(33px, white, 600, 60%);
+    }
+    &__subtitle {
+      @include text(20px, #babec4, normal, 90%);
+      margin: 24px 0;
+    }
+    &__btn {
+      @include btn-style(150px, 50px, var(--primary), 2px, 20px, white, none);
+      margin-top: 24px;
+    }
+  }
+}
+
+.cars {
+  margin: 50px 0;
+
+  &__title {
+    @include text(30px, white, 600, 30%);
+    text-align: center;
+    margin: 0 auto;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+  }
+  &__item {
+    width: 27%;
+    padding: 32px 25px;
+    border-radius: 20px;
+    background: linear-gradient(
+      to bottom right,
+      rgba(55, 74, 109, 0.5),
+      rgba(17, 18, 19, 1)
+    );
+
+    &__name {
+      @include text(30px, white, 600, auto);
+    }
+    &__model {
+      @include text(20px, white, 400, auto);
+    }
+    &__img {
+      margin: 10px 0;
+    }
+    &__features {
+      display: flex;
+      flex-wrap: wrap;
+
+      p {
+        font-size: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 50%;
+        margin: 10px 0;
+      }
+    }
+    &__price {
+      display: flex;
+      justify-content: space-between;
+      margin-top: -10px;
+
+      &__text {
+        @include text(24px, white, 600, auto);
+        position: relative;
+        bottom: -25px;
+      }
+      &__btn {
+        @include btn-style(
+          56px,
+          48px,
+          var(--primary),
+          20px 0 20px 0,
+          20px,
+          white,
+          none
+        );
+        position: relative;
+        bottom: -33px;
+        right: -25px;
+      }
+    }
+  }
+}
+.features {
+  width: 76%;
+  background: url(../imgs/Map.png);
+  margin: 70px auto;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+}
+
+.luxuary {
+  margin: 50px 0;
+  &__title {
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    margin: 20px auto;
+    justify-content: center;
+    gap: 20px;
+
+    &__item {
+      width: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 55px;
+      border-radius: 16px;
+      background: rgba(17, 18, 19, 1);
+
+      &:nth-child(1) {
+        background: var(--primary);
+        color: white;
+      }
+    }
+  }
+  &__cars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px 90px;
+
+    &__item {
+      width: 27%;
+      padding: 32px 24px;
+      background: radial-gradient(rgba(55, 74, 109, 0.5), rgba(17, 18, 19, 1));
+      border-radius: 20px;
+
+      img {
+        margin: 20px 0;
+        width: 240px;
+        margin-bottom: -5px;
+      }
+
+      &__title {
+        @include text(30px, white, 600, auto);
+        margin-bottom: 5px;
+      }
+      &__subtitle {
+        @include text(20px, white, 400, auto);
+      }
+    }
+  }
+  &__item__price {
+    display: flex;
+    justify-content: space-between;
+
+    &__text {
+      position: relative;
+      bottom: -25px;
+    }
+
+    &__btn {
+      @include btn-style(
+        56px,
+        48px,
+        var(--primary),
+        20px 0 20px 0,
+        20px,
+        white,
+        none
+      );
+      position: relative;
+      bottom: -33px;
+      right: -25px;
+    }
+  }
+}
+
+.subscribe {
+  background: url(../imgs/subscribe-bg.png);
+  padding: 70px 0 56px 0;
+  background-size: cover;
+  margin: 30px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__info {
+    width: 40%;
+
+    &__title {
+      @include text(30px, white, 600, 77%);
+    }
+
+    &__subtitle {
+      @include text(20px, white, 400, auto);
+      line-height: 24px;
+      margin: 32px 0 48px 0;
+    }
+    &__btn {
+      @include btn-style(175px, 50px, var(--primary), 5px, 20px, white, none);
+    }
+  }
+  img {
+    width: 450px;
+    height: 201px;
+  }
+}
+.logos {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 100%;
+  }
+}
+.footer {
+  margin-top: 80px;
+  padding: 30px 0;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+  &__item {
+    width: 22%;
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    i {
+      font-size: 23px;
+      margin: 10px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    img {
+      width: 60%;
+    }
+
+    &:nth-child(1) {
+      margin-right: 100px;
+    }
+  }
+  &__copy {
+    font-size: 20px;
+    text-align: center;
+    margin: 30px 0;
+    color: rgba(136, 139, 145, 1);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+  .sidenav {
+    &__list {
+      gap: 15px;
+    }
+  }
+  .hero {
+    &__img {
+      width: 100%;
+    }
+    &__info {
+      gap: 40px;
+      margin: 30px 0;
+    }
+  }
+  .about {
+    display: block;
+
+    &__img {
+      width: 100%;
+    }
+    &__info {
+      width: 100%;
+      margin: 0;
+      &__title {
+        width: 100%;
+      }
+      &__subtitle {
+        width: 100%;
+      }
+    }
+  }
+
+  .cars {
+    &__title {
+      width: 100%;
+      text-align: left;
+    }
+    &__item {
+      width: 80%;
+    }
+    &__item:not(:nth-child(1)) {
+      display: none;
+    }
+  }
+  .luxuary {
+    &__cars {
+      gap: 10px;
+      flex-wrap: wrap;
+      &__item {
+        width: 48%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .subscribe {
+    img {
+      display: none;
+    }
+    &__info {
+      width: 100%;
+      &__subtitle {
+        margin: 20px 0;
+      }
+    }
+  }
+  .footer {
+    &__list {
+      display: block;
+    }
+    &__item {
+      width: 100%;
+    }
+  }
+}
