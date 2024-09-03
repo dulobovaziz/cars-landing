@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -7,20 +8,24 @@
   list-style-type: none;
   font-family: Exo;
 }
+
 .container {
   width: 1140px;
   margin: 0 auto;
 }
+
 :root {
   --body: #0a0a0c;
   --primary: rgba(65, 119, 220, 1);
 }
+
 @mixin text($size, $color, $weight, $width) {
   font-size: $size;
   color: $color;
   font-weight: $weight;
   width: $width;
 }
+
 @mixin btn-style($width, $heigh, $bg, $radius, $size, $color, $border) {
   width: $width;
   height: $heigh;
@@ -30,10 +35,12 @@
   color: $color;
   border: $border;
 }
+
 body {
   background: var(--body);
   color: white;
 }
+
 .sidenav {
   display: flex;
   justify-content: space-between;
@@ -54,6 +61,8 @@ body {
     }
   }
 }
+
+
 .hero {
   text-align: center;
   margin: 40px 0;
@@ -200,6 +209,8 @@ body {
     }
   }
 }
+
+
 .features {
   width: 76%;
   background: url(../imgs/Map.png);
@@ -323,6 +334,7 @@ body {
     height: 201px;
   }
 }
+
 .logos {
   display: flex;
   gap: 100px;
